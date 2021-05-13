@@ -30,7 +30,7 @@ config-schemes:
         order: 30
 
 actions:
- zendeskupdateticket:
+  zendeskupdateticket:
     title: Zendesk Update Ticket
     description: Update Zendesk Ticket
     path: src.update_ticket:Execute
@@ -59,59 +59,58 @@ actions:
         title: make comment public
         required: false
         description: make comment public
-        order: 50     
+        order: 50
       Tags:
         type: string
         title: Add Tag to Zendesk Ticket
         required: false
         description: Add Tag to Zendesk Ticket
-        order: 50           
+        order: 50
       connection:
         $ref: "#connection"
         required: true
         order: 70
-zendeskupgetticketinfo:
-    title: Zendesk get Ticket info
-    description: Zendesk get Ticket info
-    path: src.get_ticket_info:Execute
-    icon: fab fa-ticket
-    parameters:
-      ticketid:
-        type: integer
-        title: Zendesk Ticket id
-        required: false
-        description: Zendesk Ticekt Id (Can be found in the ticket ur /tickets/4  )
-        order: 20
-      connection:
-        $ref: "#connection"
-        required: true
-        order: 70
-zendescreateticket:
-    title: Zendesk Create Ticket
-    description: Zendesk Create Ticket
-    path: src.create_ticket:Execute
-    icon: fab fa-ticket
-    parameters:
-      Comment:
-        type: text
-        title: Comment that will be added to the ticket
-        required: true
-        description: Comment that will be added to the ticket
-        order: 40
-      Public:
-        type: bolean
-        title: make comment public
-        required: false
-        description: make comment public
-        order: 50     
-      Tags:
-        type: string
-        title: Add Tag to Zendesk Ticket
-        required: false
-        description: Add Tag to Zendesk Ticket
-        order: 50           
-      connection:
-        $ref: "#connection"
-        required: true
-        order: 70
-  
+    zendeskupgetticketinfo:
+      title: Zendesk get Ticket info
+      description: Zendesk get Ticket info
+      path: src.get_ticket_info:Execute
+      icon: fab fa-ticket
+      parameters:
+        ticketid:
+          type: integer
+          title: Zendesk Ticket id
+          required: false
+          description: Zendesk Ticekt Id (Can be found in the ticket ur /tickets/4  )
+          order: 20
+        connection:
+          $ref: "#connection"
+          required: true
+          order: 70
+    zendescreateticket:
+      title: Zendesk Create Ticket
+      description: Zendesk Create Ticket
+      path: src.create_ticket:Execute
+      icon: fab fa-ticket
+      parameters:
+        Comment:
+          type: text
+          title: Comment that will be added to the ticket
+          required: true
+          description: Comment that will be added to the ticket
+          order: 40
+        Public:
+          type: bolean
+          title: make comment public
+          required: false
+          description: make comment public
+          order: 50
+        Tags:
+          type: string
+          title: Add Tag to Zendesk Ticket
+          required: false
+          description: Add Tag to Zendesk Ticket
+          order: 50
+        connection:
+          $ref: "#connection"
+          required: true
+          order: 70
