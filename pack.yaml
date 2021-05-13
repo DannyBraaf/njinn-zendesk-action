@@ -7,7 +7,7 @@ config-schemes:
   connection:
     type: object
     title: Zendesk Authentication
-    icon: fab fa-ticket
+    icon: fab fa-ticket-alt
     description: Aws Authentication Information.
     properties:
       url:
@@ -34,7 +34,7 @@ actions:
     title: Zendesk Update Ticket
     description: Update Zendesk Ticket
     path: src.update_ticket:Execute
-    icon: fab fa-ticket
+    icon: fab fa-ticket-alt
     parameters:
       ticketid:
         type: integer
@@ -74,7 +74,7 @@ actions:
     title: Zendesk get Ticket info
     description: Zendesk get Ticket info
     path: src.get_ticket_info:Execute
-    icon: fab fa-ticket
+    icon: fab fa-ticket-alt
     parameters:
       ticketid:
         type: integer
@@ -90,7 +90,7 @@ actions:
     title: Zendesk Create Ticket
     description: Zendesk Create Ticket
     path: src.create_ticket:Execute
-    icon: fab fa-ticket
+    icon: fab fa-ticket-alt
     parameters:
       Comment:
         type: text
