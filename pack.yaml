@@ -55,7 +55,7 @@ actions:
         description: Comment that will be added to the ticket
         order: 40
       Public:
-        type: bolean
+        type: boolean
         title: make comment public
         required: false
         description: make comment public
@@ -80,7 +80,7 @@ actions:
         type: integer
         title: Zendesk Ticket id
         required: false
-        description: Zendesk Ticekt Id (Can be found in the ticket ur /tickets/4  )
+        description: Zendesk Ticekt Id (leave blank to get all tickets)
         order: 20
       connection:
         $ref: "#connection"
@@ -99,7 +99,7 @@ actions:
         description: Comment that will be added to the ticket
         order: 40
       Public:
-        type: bolean
+        type: boolean
         title: make comment public
         required: false
         description: make comment public
