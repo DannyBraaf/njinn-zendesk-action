@@ -1,0 +1,117 @@
+---
+name: Zendesk
+title: Zendesk Actions
+description: |
+  Zendesk-Integration
+config-schemes:
+  connection:
+    type: object
+    title: Zendesk Authentication
+    icon: fab fa-ticket
+    description: Aws Authentication Information.
+    properties:
+      url:
+        type: string
+        title: Zendesk URL
+        required: true
+        description: URL of the Zendesk Application (eg. 'https://yourid.zendesk.com/)
+        order: 10
+      username:
+        type: string
+        title: Username
+        required: true
+        description: User used to make the Connection to Zendesk
+        order: 20
+      password:
+        type: secret
+        title: Password/API Key
+        required: true
+        description: This is either the password  or an API key depending on the security level chozen for Zendesk API (/agent/admin/api/settings)
+        order: 30
+
+actions:
+ zendeskupdateticket:
+    title: Zendesk Update Ticket
+    description: Update Zendesk Ticket
+    path: src.update_ticket:Execute
+    icon: fab fa-ticket
+    parameters:
+      ticketid:
+        type: integer
+        title: Zendesk Ticket id
+        required: true
+        description: Zendesk Ticekt Id (Can be found in the ticket ur /tickets/4  )
+        order: 20
+      Status:
+        type: string
+        title: Change Zendesk Ticket Status to
+        required: true
+        description: Change Zendesk Ticket Status to
+        order: 30
+      Comment:
+        type: text
+        title: Comment that will be added to the ticket
+        required: true
+        description: Comment that will be added to the ticket
+        order: 40
+      Public:
+        type: bolean
+        title: make comment public
+        required: false
+        description: make comment public
+        order: 50     
+      Tags:
+        type: string
+        title: Add Tag to Zendesk Ticket
+        required: false
+        description: Add Tag to Zendesk Ticket
+        order: 50           
+      connection:
+        $ref: "#connection"
+        required: true
+        order: 70
+zendeskupgetticketinfo:
+    title: Zendesk get Ticket info
+    description: Zendesk get Ticket info
+    path: src.get_ticket_info:Execute
+    icon: fab fa-ticket
+    parameters:
+      ticketid:
+        type: integer
+        title: Zendesk Ticket id
+        required: false
+        description: Zendesk Ticekt Id (Can be found in the ticket ur /tickets/4  )
+        order: 20
+      connection:
+        $ref: "#connection"
+        required: true
+        order: 70
+zendescreateticket:
+    title: Zendesk Create Ticket
+    description: Zendesk Create Ticket
+    path: src.create_ticket:Execute
+    icon: fab fa-ticket
+    parameters:
+      Comment:
+        type: text
+        title: Comment that will be added to the ticket
+        required: true
+        description: Comment that will be added to the ticket
+        order: 40
+      Public:
+        type: bolean
+        title: make comment public
+        required: false
+        description: make comment public
+        order: 50     
+      Tags:
+        type: string
+        title: Add Tag to Zendesk Ticket
+        required: false
+        description: Add Tag to Zendesk Ticket
+        order: 50           
+      connection:
+        $ref: "#connection"
+        required: true
+        order: 70
+  
